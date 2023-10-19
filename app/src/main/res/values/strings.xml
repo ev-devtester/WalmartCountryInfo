@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">WalmartCountryInfo</string>
+    <string name="begin_browsing">Tap to View Country Info</string>
+    <string name="retrieving_countries">Retrieving Country Info</string>
+</resources>

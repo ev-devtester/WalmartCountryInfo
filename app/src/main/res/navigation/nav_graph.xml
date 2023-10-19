@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_start_screen">
+
+    <fragment
+        android:id="@+id/nav_start_screen"
+        android:name="com.example.walmartcountryinfo.view.StartingPageFragment">
+
+        <action
+            android:id="@+id/action_start_to_country_view"
+            app:destination="@id/nav_country_view">
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_country_view"
+        android:name="com.example.walmartcountryinfo.view.CountryListFragment">
+    </fragment>
+
+</navigation>
