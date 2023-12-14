@@ -1,6 +1,6 @@
-package com.example.walmartcountryinfo.api
+package com.example.walmartcountryinfo.data.api
 
-import com.example.walmartcountryinfo.model.UIState
+import com.example.walmartcountryinfo.domain.model.UIState
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
@@ -19,7 +19,7 @@ class CountryRepositoryImpl(private val api: CountryApi): CountryRepository {
                     } ?: throw Exception("Empty Response"))
                 } else throw Exception("Failed Network Call")
             } catch (e: Exception) {
-                emit(UIState.Error(e))
+                emit(UIState.Error(Exception("There was an error that occurred!")))
             }
         }
 

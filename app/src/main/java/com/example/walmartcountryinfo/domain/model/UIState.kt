@@ -1,4 +1,4 @@
-package com.example.walmartcountryinfo.model
+package com.example.walmartcountryinfo.domain.model
 
 sealed class UIState  {
     object Loading: UIState()

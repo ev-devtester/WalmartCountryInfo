@@ -1,19 +1,19 @@
-package com.example.walmartcountryinfo.viewmodel
+package com.example.walmartcountryinfo.presentation.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.walmartcountryinfo.api.CountryRepository
-import com.example.walmartcountryinfo.model.UIState
+import com.example.walmartcountryinfo.domain.model.UIState
+import com.example.walmartcountryinfo.domain.usecase.GetCountriesUseCase
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.plus
 
 class CountryViewModel(
-    private val repository: CountryRepository,
+    private val getCountriesUseCase: GetCountriesUseCase,
     private val dispatcher: CoroutineDispatcher
 ): ViewModel() {
     private val _countryData = MutableLiveData<UIState>()
@@ -33,7 +33,7 @@ class CountryViewModel(
 
     fun getCountries() {
         viewModelSafeScope.launch(dispatcher) {
-            repository.getCountries().collect{
+            getCountriesUseCase.callApi().collect{
                 _countryData.postValue(it)
             }
         }

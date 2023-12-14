@@ -1,4 +1,4 @@
-package com.example.walmartcountryinfo.view
+package com.example.walmartcountryinfo.presentation.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -20,8 +20,7 @@ class StartingPageFragment: ViewModelFragment() {
         binding.startCountryBrowse.setOnClickListener {
             viewModel.setLoading()
             findNavController().navigate(
-                StartingPageFragmentDirections
-                    .actionStartToCountryView()
+                StartingPageFragmentDirections.actionStartToCountryView()
             )
         }
 

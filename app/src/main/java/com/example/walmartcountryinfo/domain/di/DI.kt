@@ -1,12 +1,13 @@
-package com.example.walmartcountryinfo.di
+package com.example.walmartcountryinfo.domain.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStoreOwner
-import com.example.walmartcountryinfo.api.CountryApi
-import com.example.walmartcountryinfo.api.CountryRepositoryImpl
-import com.example.walmartcountryinfo.util.BASE_URL
-import com.example.walmartcountryinfo.viewmodel.CountryViewModel
+import com.example.walmartcountryinfo.data.api.CountryApi
+import com.example.walmartcountryinfo.data.api.CountryRepositoryImpl
+import com.example.walmartcountryinfo.data.util.BASE_URL
+import com.example.walmartcountryinfo.domain.usecase.GetCountriesUseCase
+import com.example.walmartcountryinfo.presentation.viewmodel.CountryViewModel
 import kotlinx.coroutines.Dispatchers
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -35,11 +36,12 @@ object DI {
 
     private fun provideRepository() = CountryRepositoryImpl(service)
     private fun provideDispatcher() = Dispatchers.IO
+    private fun provideUseCase() = GetCountriesUseCase(provideRepository())
 
     fun provideViewModel(storeOwner: ViewModelStoreOwner): CountryViewModel {
         return ViewModelProvider(storeOwner, object: ViewModelProvider.Factory{
             override fun <T : ViewModel> create(modelClass: Class<T>): T {
-                return CountryViewModel(provideRepository(), provideDispatcher()) as T
+                return CountryViewModel(provideUseCase(), provideDispatcher()) as T
             }
         })[CountryViewModel::class.java]
     }

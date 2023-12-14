@@ -1,12 +1,12 @@
-package com.example.walmartcountryinfo.view
+package com.example.walmartcountryinfo.presentation.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.walmartcountryinfo.databinding.FragmentCountryListBinding
-import com.example.walmartcountryinfo.model.CountryResponse
-import com.example.walmartcountryinfo.model.UIState
+import com.example.walmartcountryinfo.domain.model.CountryResponse
+import com.example.walmartcountryinfo.domain.model.UIState
 
 class CountryListFragment: ViewModelFragment() {
     private lateinit var binding: FragmentCountryListBinding

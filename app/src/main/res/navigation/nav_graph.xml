@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/nav_start_screen"
-        android:name="com.example.walmartcountryinfo.view.StartingPageFragment">
+        android:name="com.example.walmartcountryinfo.presentation.view.StartingPageFragment">
 
         <action
             android:id="@+id/action_start_to_country_view"
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/nav_country_view"
-        android:name="com.example.walmartcountryinfo.view.CountryListFragment">
+        android:name="com.example.walmartcountryinfo.presentation.view.CountryListFragment">
     </fragment>
 
 </navigation>

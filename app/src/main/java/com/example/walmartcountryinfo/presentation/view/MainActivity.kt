@@ -1,4 +1,4 @@
-package com.example.walmartcountryinfo.view
+package com.example.walmartcountryinfo.presentation.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -1,6 +1,6 @@
-package com.example.walmartcountryinfo.api
+package com.example.walmartcountryinfo.data.api
 
-import com.example.walmartcountryinfo.model.CountryResponse
+import com.example.walmartcountryinfo.domain.model.CountryResponse
 import retrofit2.Response
 import retrofit2.http.GET
 

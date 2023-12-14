@@ -1,10 +1,10 @@
-package com.example.walmartcountryinfo.view
+package com.example.walmartcountryinfo.presentation.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.walmartcountryinfo.databinding.CountryListItemBinding
-import com.example.walmartcountryinfo.model.CountryResponse
+import com.example.walmartcountryinfo.domain.model.CountryResponse
 
 class CountryAdapter(
     private val list: MutableList<CountryResponse> = mutableListOf()
